@@ -1,0 +1,18 @@
+name: Probar fuentes del SAT
+on:
+  push:
+    paths: ['tools/**', '.github/workflows/sondeo.yml']
+  workflow_dispatch:
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Servicio de consulta de CFDI
+        run: |
+          python3 tools/probar_sat.py 2>&1 | tee sat.log || true
+          msg=$(sed -e 's/%/%25/g' sat.log | sed -e ':a;N;$!ba;s/\n/%0A/g'); echo "::notice title=SAT::$msg"
+      - name: Lista 69-B
+        run: |
+          python3 tools/efos_to_json.py 2>&1 | tee efos.log || true
+          msg=$(tail -c 3000 efos.log | sed -e 's/%/%25/g' | sed -e ':a;N;$!ba;s/\n/%0A/g'); echo "::notice title=EFOS::$msg"

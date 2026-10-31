@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sello de verificación: doble anillo con palomita -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <group android:rotation="-10" android:pivotX="54" android:pivotY="54">
+        <path android:strokeColor="#FFFFFF" android:strokeWidth="3.4"
+            android:pathData="M54,30a24,24 0,1 1,0 48a24,24 0,1 1,0 -48z" />
+        <path android:strokeColor="#FFFFFF" android:strokeWidth="1.6"
+            android:pathData="M54,35.5a18.5,18.5 0,1 1,0 37a18.5,18.5 0,1 1,0 -37z" />
+        <path android:strokeColor="#FFFFFF" android:strokeWidth="4.2"
+            android:strokeLineCap="round" android:strokeLineJoin="round"
+            android:pathData="M45,54.5l6,6l12,-13" />
+    </group>
+</vector>
