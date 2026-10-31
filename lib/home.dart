@@ -304,7 +304,7 @@ class _ProveedoresTabState extends State<ProveedoresTab> {
               Text(
                   lista.total == 0
                       ? 'La lista no está disponible en esta versión.'
-                      : 'Lista del SAT con ${lista.total} contribuyentes, '
+                      : 'Lista del SAT con ${_miles(lista.total)} contribuyentes, '
                           'descargada el ${lista.actualizadoLegible}.',
                   style: tCuerpo(context, size: 13)),
             const SizedBox(height: 24),
@@ -487,4 +487,14 @@ class AjustesTab extends StatelessWidget {
       ],
     );
   }
+}
+
+String _miles(int n) {
+  final s = '$n';
+  final b = StringBuffer();
+  for (var i = 0; i < s.length; i++) {
+    if (i > 0 && (s.length - i) % 3 == 0) b.write(',');
+    b.write(s[i]);
+  }
+  return b.toString();
 }

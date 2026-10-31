@@ -391,7 +391,7 @@ class _ResultScreenState extends State<ResultScreen> {
                     : Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (_) => const ScanScreen())),
             child: Text(widget.inicial != null && r == widget.inicial
-                ? 'Consultar de nuevo'
+                ? 'Actualizar'
                 : 'Verificar otra'),
           ),
       ]),
@@ -401,7 +401,9 @@ class _ResultScreenState extends State<ResultScreen> {
           Stack(
             clipBehavior: Clip.none,
             children: [
-              HojaComprobante(
+              SizedBox(
+                width: double.infinity,
+                child: HojaComprobante(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -416,10 +418,10 @@ class _ResultScreenState extends State<ResultScreen> {
                         Text(folioEnDosLineas(c.uuid), style: tMono(context, size: 14.5))),
                   ],
                 ),
-              ),
+              )),
               Positioned(
-                right: 14,
-                top: 18,
+                right: 12,
+                top: 104,
                 child: _cargando
                     ? Padding(
                         padding: const EdgeInsets.all(18),

@@ -458,9 +458,10 @@ class Dato extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(child: Text(etiqueta, style: tCuerpo(context, size: 15))),
+          Expanded(flex: 5, child: Text(etiqueta, style: tCuerpo(context, size: 15))),
           const SizedBox(width: 16),
-          Flexible(
+          Expanded(
+            flex: 6,
             child: Text(valor,
                 textAlign: TextAlign.right,
                 style: mono
@@ -511,9 +512,7 @@ class Aviso extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(texto,
-                    textAlign: TextAlign.justify,
-                    style: tCuerpo(context, size: 14, color: t.tinta)),
+                Text(texto, style: tCuerpo(context, size: 14, color: t.tinta)),
                 if (accion != null) accion!,
               ],
             ),
