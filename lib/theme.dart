@@ -354,8 +354,8 @@ class _SelloAnimadoState extends State<SelloAnimado> with SingleTickerProviderSt
 // ---------------------------------------------------------------------------
 
 class _Festoneado extends CustomClipper<Path> {
-  final double r;
-  const _Festoneado({this.r = 7});
+  static const double r = 7;
+  const _Festoneado();
 
   @override
   Path getClip(Size s) {
